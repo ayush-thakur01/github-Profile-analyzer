@@ -40,7 +40,7 @@ res.json({
   tone: roast.tone,
   message: roast.message,
   advice: roast.advice,
-  timelineAdviice: timelineAdvice
+  timelineAdvice: timelineAdvice
 });
 
 
