@@ -1,45 +1,73 @@
+function getRandom(arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
 function generateAdvice(breakdown) {
   let advice = [];
 
   // 👤 Profile weak
   if (breakdown.profile < 6) {
     advice.push(
-      "Profile bio + profile picture improve kar — first impression matters."
+      getRandom([
+        "Improve your GitHub bio and profile picture to make a stronger first impression.",
+        "Add a clear bio and professional profile picture to explain who you are as a developer.",
+        "Your profile setup looks incomplete — a better bio can immediately improve credibility."
+      ])
     );
   }
 
-  // 📦 Repos kam
+  // 📦 Low repository count
   if (breakdown.repos < 10) {
     advice.push(
-      "At least 2–3 real projects add kar (tutorial copy nahi)."
+      getRandom([
+        "Add at least 2–3 real-world projects instead of tutorial-based repositories.",
+        "Build and publish a few meaningful projects that demonstrate problem-solving skills.",
+        "Your repository count is low — focus on quality projects rather than basic practice code."
+      ])
     );
   }
 
   // 📝 Documentation weak
   if (breakdown.readme < 10) {
     advice.push(
-      "README files improve kar — problem, tech stack aur setup likh."
+      getRandom([
+        "Improve README files by clearly explaining the problem, tech stack, and setup steps.",
+        "Well-written README files can significantly improve how recruiters view your projects.",
+        "Add proper documentation so others can understand and run your projects easily."
+      ])
     );
   }
 
   // ⏳ Inconsistent activity
   if (breakdown.recentActivity < 5) {
     advice.push(
-      "Next 14 din daily ek small commit kar (no zero days rule)."
+      getRandom([
+        "Maintain daily contributions for the next two weeks, even if they are small changes.",
+        "Consistency matters more than size — aim for regular commits to keep your profile active.",
+        "Try following the 'no zero days' rule to rebuild consistency on GitHub."
+      ])
     );
   }
 
-  // ⭐ Impact missing
+  // ⭐ Low impact / legacy quality
   if (breakdown.legacyQuality < 5) {
     advice.push(
-      "Project impact badhao — stars, forks, ya real-world use cases."
+      getRandom([
+        "Increase project impact by building applications with real-world use cases.",
+        "Projects that receive stars, forks, or users tend to attract more recruiter attention.",
+        "Focus on creating projects that solve real problems and can be shared publicly."
+      ])
     );
   }
 
-  // Safety net
+  // 🛡️ Safety net (strong profile)
   if (advice.length === 0) {
     advice.push(
-      "Overall profile strong hai. Ab open-source ya advanced projects pe focus kar."
+      getRandom([
+        "Your GitHub profile looks strong. Consider contributing to open-source projects next.",
+        "You have a solid foundation — advanced projects or open-source work would be a great next step.",
+        "This profile is well-structured. Focus on scaling impact through collaboration or open source."
+      ])
     );
   }
 
