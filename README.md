@@ -117,11 +117,12 @@ Install dependencies
   npm install
 ```
 
-Start the  backend server
+Start the  backend server/forntend server
 
 ```bash
   node index.js
-  for frontend:frontend/index.html
+  frontend/index.html
+```
 
 
 
