@@ -2,89 +2,88 @@ function getRandom(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-function getRoast(score) {
+function getRoast(score, recentActive = 0, legacyCount = 0) {
 
-    // 🟣 Legacy but inactive
-if (score >= 70 && recentActive < 2 && legacyCount >= 2) {
-  return {
-    tone: "legacy_inactive",
-    message: getRandom([
-      "Yeh GitHub clearly batata hai ki tu pehle kaafi strong tha 🔥 Bas thoda break aa gaya.",
-      "Strong profile hai, lagta hai life thodi beech me aa gayi. Wapas aaye toh shine karega.",
-      "Legacy solid hai bhai, bas consistency missing hai."
-    ]),
-    advice: [
-      "1 old project revive kar",
-      "Next 14 din daily small commits",
-      "README + docs polish kar"
-    ]
-  };
-}
+  // 🟣 Legacy but inactive (strong past, weak present)
+  if (score >= 70 && recentActive < 2 && legacyCount >= 2) {
+    return {
+      tone: "legacy_inactive",
+      message: getRandom([
+        "This profile shows strong past work, but recent activity is missing. It looks like you paused at your peak.",
+        "You clearly built solid projects earlier, but consistency has dropped recently. A comeback would make this profile shine.",
+        "There’s real experience here — it just needs to be revived with fresh activity."
+      ]),
+      advice: [
+        "Revive one strong older project with small improvements",
+        "Resume consistent commits over the next two weeks",
+        "Polish documentation to match the quality of past work"
+      ]
+    };
+  }
 
-
-  // 🔴 0–30 : SAVAGE
+  // 🔴 0–30 : Very weak / savage honesty
   if (score <= 30) {
     return {
       tone: "savage",
       message: getRandom([
-        "Sach bolun? Yeh GitHub dekh ke lagta hai account bas username book karne ke liye banaya hai 😭",
-        "GitHub hai bhai, Google Drive nahi. Thoda kaam bhi dikha de.",
-        "Agar recruiter yeh GitHub dekhe, toh bina scroll kiye band kar dega."
+        "This GitHub profile feels empty and inactive, which may raise concerns for recruiters.",
+        "There is very little visible work here — it does not currently reflect your potential as a developer.",
+        "At the moment, this profile lacks the basic signals recruiters look for."
       ]),
       advice: [
-        "1 simple project bana (7 days)",
-        "Har repo me README add kar",
-        "Roz ek chhota commit kar (no zero days)"
+        "Build and publish at least one simple project within a week",
+        "Add README files explaining what each repository does",
+        "Start making small daily commits to show consistency"
       ]
     };
   }
 
-  // 🟠 31–50 : FRIENDLY REALITY
+  // 🟠 31–50 : Friendly reality check
   if (score <= 50) {
     return {
       tone: "friendly_reality",
       message: getRandom([
-        "Effort thoda dikhta hai, par consistency missing hai bhai.",
-        "GitHub zinda hai, par ICU me hai 😄",
-        "Basics theek hain, par profile abhi strong nahi lagti."
+        "Some effort is visible, but the profile still feels incomplete.",
+        "You have started, but consistency and depth are missing.",
+        "This profile shows learning in progress, not yet confidence."
       ]),
       advice: [
-        "2 beginner–level real projects bana",
-        "Old repos clean kar",
-        "15 din daily commit kar"
+        "Add two beginner-friendly but complete projects",
+        "Clean up unused or low-quality repositories",
+        "Maintain daily commits for at least 15 days"
       ]
     };
   }
 
-  // 🟢 51–75 : MOTIVATIONAL
+  // 🟢 51–75 : Motivational push
   if (score <= 75) {
     return {
       tone: "motivational",
       message: getRandom([
-        "Theek jaa raha hai bhai 👍 bas thoda push chahiye.",
-        "Effort dikh raha hai, ab isko polish karna hai.",
-        "GitHub dead nahi hai, bas consistency chahiye."
+        "This is a decent GitHub profile with room for polishing.",
+        "Your effort is visible — a bit more consistency can make a big difference.",
+        "You are on the right track; focus on refinement and regular activity."
       ]),
       advice: [
-        "1 strong project add kar",
-        "README ko professional bana",
-        "Commits ko regular rakho"
+        "Add one strong, well-structured project",
+        "Make README files more professional and detailed",
+        "Keep your commit history consistent"
       ]
     };
   }
 
-  // 🔵 76–100 : PRAISE + PUSH
+  // 🔵 76–100 : Praise + push
   return {
     tone: "praise_push",
     message: getRandom([
-      "Solid GitHub 🔥 Recruiter yahan ruk ke dekhega.",
-      "Profile strong hai bhai, bas thoda aur shine chahiye.",
-      "Yeh GitHub job-ready lag raha hai."
+      "This is a strong GitHub profile that stands out positively.",
+      "Your profile reflects real effort and solid development work.",
+      "Recruiters are likely to take this profile seriously."
     ]),
     advice: [
-      "Open-source contribution start kar",
-      "Project documentation improve kar",
-      "Issues + PRs pe active reh"
+      "Start contributing to open-source projects",
+      "Improve documentation and project presentation further",
+      "Stay active through issues, pull requests, and collaborations"
     ]
   };
 }
