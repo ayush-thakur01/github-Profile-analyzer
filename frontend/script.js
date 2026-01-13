@@ -4,6 +4,26 @@ async function analyze() {
 
   const res = await fetch(`http://localhost:5000/analyze/${u}`);
   const data = await res.json();
+ 
+if (data.internshipReadiness) {
+  document.getElementById("readinessLevel").innerText =
+    `Status: ${data.internshipReadiness.level}`;
+
+  document.getElementById("readinessMessage").innerText =
+    data.internshipReadiness.message;
+}
+
+// ==========================
+// Main Weakness
+// ==========================
+if (data.mainWeakness) {
+  document.getElementById("weaknessLabel").innerText =
+    `Area: ${data.mainWeakness.label}`;
+
+  document.getElementById("weaknessMessage").innerText =
+    data.mainWeakness.message;
+}
+
   console.log("TIMELINE DATA 👉", data.timelineAdvice);
 
 
