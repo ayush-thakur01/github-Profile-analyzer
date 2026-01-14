@@ -1,5 +1,0 @@
-[[redirects]]
-  from = "/analyze/*"
-  to = "https://github-roast-backend.onrender.com/analyze/:splat"
-  status = 200
-  force = true
