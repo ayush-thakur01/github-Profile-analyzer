@@ -5,7 +5,7 @@ function getRandom(arr) {
 function generateAdvice(breakdown) {
   let advice = [];
 
-  // 👤 Profile weak
+  //  Profile weak
   if (breakdown.profile < 6) {
     advice.push(
       getRandom([
@@ -16,7 +16,7 @@ function generateAdvice(breakdown) {
     );
   }
 
-  // 📦 Low repository count
+  //  Low repository count
   if (breakdown.repos < 10) {
     advice.push(
       getRandom([
@@ -27,7 +27,7 @@ function generateAdvice(breakdown) {
     );
   }
 
-  // 📝 Documentation weak
+  //  Documentation weak
   if (breakdown.readme < 10) {
     advice.push(
       getRandom([
@@ -38,7 +38,7 @@ function generateAdvice(breakdown) {
     );
   }
 
-  // ⏳ Inconsistent activity
+  //  Inconsistent activity
   if (breakdown.recentActivity < 5) {
     advice.push(
       getRandom([
@@ -49,7 +49,7 @@ function generateAdvice(breakdown) {
     );
   }
 
-  // ⭐ Low impact / legacy quality
+  //  Low impact / legacy quality
   if (breakdown.legacyQuality < 5) {
     advice.push(
       getRandom([
@@ -60,7 +60,7 @@ function generateAdvice(breakdown) {
     );
   }
 
-  // 🛡️ Safety net (strong profile)
+  //  Safety net (strong profile)
   if (advice.length === 0) {
     advice.push(
       getRandom([
