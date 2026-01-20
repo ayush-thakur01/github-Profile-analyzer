@@ -1,4 +1,4 @@
-# 🔥 GitHub Roast Analyzer
+#  GitHub profile Analyzer
 
 A backend-focused web project that analyzes a GitHub profile and provides a **score-based evaluation**,  
 **friendly technical roast**, **detailed breakdown**, and a **7 / 14 / 30 day improvement roadmap**.
@@ -20,31 +20,31 @@ This tool acts like a **technical mentor**:
 
 ---
 
-## 🚀 Key Features
+##  Key Features
 
-- 🔢 **GitHub Profile Scoring (0–100)**
-- 🎭 **Tone-based Technical Roast**
+-  **GitHub Profile Scoring (0–100)**
+-  **Tone-based Technical Roast**
   - Savage (very weak profiles)
   - Friendly reality check
   - Motivational feedback
   - Praise + push
   - Legacy but inactive detection
-- 📊 **Detailed Score Breakdown**
+- **Detailed Score Breakdown**
   - Profile completeness
   - Repository quality
   - Documentation (README)
   - Recent activity
   - Legacy / past impact
-- 🛠️ **Custom Advice Generation**
-- ⏳ **7 / 14 / 30 Day Improvement Roadmap**
-- 🌙 Simple frontend UI (in progress)
-- 🎯 Internship Readiness Verdict (Not Ready / Almost Ready / Internship Ready)
-- ⚠️ Biggest Improvement Area detection based on profile analysis
+-  **Custom Advice Generation**
+-  **7 / 14 / 30 Day Improvement Roadmap**
+-  Simple frontend UI (in progress)
+-  Internship Readiness Verdict (Not Ready / Almost Ready / Internship Ready)
+-  Biggest Improvement Area detection based on profile analysis
 
 
 ---
 
-## 🧠 System Design Overview
+##  System Design Overview
 
 1. User enters a GitHub username  
 2. Backend fetches public data using GitHub REST API  
@@ -54,7 +54,7 @@ This tool acts like a **technical mentor**:
 6. Frontend displays the results
 
 
-## 📸 Interface Preview
+##  Interface Preview
 
 ### Home Screen
 ![Home Screen](screenshots/ui-home.png)
@@ -89,7 +89,7 @@ This tool acts like a **technical mentor**:
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 github-roast-analyzer/
